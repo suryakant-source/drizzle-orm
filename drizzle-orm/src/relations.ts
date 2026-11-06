@@ -1656,7 +1656,7 @@ export type Primitive = string | number | bigint | boolean | symbol | null | und
 export type RelationsFieldFilter<T = unknown> =
 	| RelationFieldsFilterInternals<T>
 	| (
-		unknown extends T ? never : T extends Primitive ? T : never
+		unknown extends T ? never : T extends Primitive | Date ? T : never
 	)
 	| Placeholder;
 
